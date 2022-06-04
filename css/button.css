@@ -1,0 +1,12 @@
+@import "global.css";
+
+.main-button-color-3 {
+  background-color: var(--main-color-3);
+  color: var(--main-color-white);
+  width: 230px;
+  height: 60px;
+  border-radius: 6px;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}

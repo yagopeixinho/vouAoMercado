@@ -1,0 +1,40 @@
+@import "./global.css";
+
+.initial-interface {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+
+.initial-interface-right {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--main-color-white);
+}
+
+.initial-interface-left {
+  background-color: var(--main-color-1);
+  flex: 1;
+}
+
+.first-access-container {
+  border: 1px solid red;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.initial-interface-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.initial-interface-container-input {
+  display: flex;
+  flex-direction: column;
+}
