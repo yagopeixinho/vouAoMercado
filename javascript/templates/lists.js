@@ -1,4 +1,5 @@
 import { openModalNewList } from "../forms/createNewList.js";
+import { getAllUserLists } from "../functions/getAllUserLists.js";
 import { getItemLocalStorage } from "../functions/getItemLocalStorage.js";
 
 (function createTitleList() {
@@ -13,6 +14,8 @@ import { getItemLocalStorage } from "../functions/getItemLocalStorage.js";
 
   document.getElementById("lists-title").appendChild(h1);
 })();
+
+
 
 document
   .getElementById("icon-create-list")

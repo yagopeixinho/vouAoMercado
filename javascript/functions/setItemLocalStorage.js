@@ -1,3 +1,6 @@
-export function setItemLocalStorage(item) {
-  localStorage.setItem(`LISTA_${item.listName}`, JSON.stringify(item));
+export function setItemLocalStorage(key, item) {
+  const regexFilter = /\s/g;
+  const modifiedKey = key.replace(regexFilter, "_");
+
+  localStorage.setItem(modifiedKey.toUpperCase(), JSON.stringify(item));
 }

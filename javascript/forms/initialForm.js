@@ -1,12 +1,20 @@
 import { verifyFormFields } from "../functions/verifyFormFields.js";
 import { changeMainColors } from "../functions/changeMainColors.js";
 import { getItemLocalStorage } from "../functions/getItemLocalStorage.js";
+import { setItemLocalStorage } from "../functions/setItemLocalStorage.js";
 
 window.addEventListener("load", () => {
+  debugger;
   (function setInputColorValue() {
-    document.getElementById("initial-color-input").value = getItemLocalStorage(
-      "USER_FAVORITE_COLOR"
-    );
+    debugger;
+    const color = getItemLocalStorage("USER_FAVORITE_COLOR");
+
+    if (color === null) {
+      document.getElementById("initial-color-input").value = "#fecf10";
+      setItemLocalStorage("USER_FAVORITE_COLOR", "#fecf10");
+    } else {
+      document.getElementById("initial-color-input").value = color;
+    }
   })();
 });
 
@@ -25,6 +33,7 @@ document
 
 function createUser(ev) {
   ev.preventDefault(ev);
+  debugger;
 
   if (verifyFormFields("initial-form")) {
     const user = {

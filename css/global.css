@@ -3,6 +3,7 @@
 @import "button.css";
 @import "input.css";
 @import "__createNewListModal.css";
+@import "__telaListagem.css";
 
 * {
   margin: 0;
