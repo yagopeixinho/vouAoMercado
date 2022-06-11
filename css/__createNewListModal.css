@@ -1,0 +1,72 @@
+.create-new-list-modal {
+  display: block !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #00000090;
+  opacity: 1;
+  z-index: 1;
+}
+
+.modal-new-list-header {
+  width: 100%;
+  background-color: rgb(233, 227, 227);
+  height: 4vh;
+}
+
+.modal-new-list-container-form {
+  width: 40%;
+  margin: 12% auto;
+}
+
+.modal-new-list-form {
+  background-color: rgb(238, 238, 238);
+  width: 100%;
+  height: 500px;
+}
+
+.modal-new-list-footer {
+  width: 100%;
+  background-color: rgb(233, 227, 227);
+}
+
+.modal-new-list-form form {
+  display: flex;
+  justify-content: center;
+  padding: 20px 14px 0px 70px;
+}
+
+.modal-new-list-form input {
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid rgb(233, 227, 227);
+  padding: 10px;
+  outline: none;
+  font-family: "Roboto";
+  font-style: normal;
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.767);
+}
+.modal-new-list-form input::placeholder {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 63px;
+  color: rgba(0, 0, 0, 0.397);
+}
+
+.modal-new-list-btn-row {
+  padding: 14px 12px;
+  display: flex;
+  justify-content: flex-end;
+}
+.btn-modal-new-list {
+  width: 114px;
+  height: 46px;
+  font-size: 14px;
+  font-weight: 600;
+}

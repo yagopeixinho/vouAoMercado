@@ -1,4 +1,5 @@
-import { getItemLocalStorage } from "../functions/getIemLocalStorage.js";
+import { openModalNewList } from "../forms/createNewList.js";
+import { getItemLocalStorage } from "../functions/getItemLocalStorage.js";
 
 (function createTitleList() {
   const user = JSON.parse(getItemLocalStorage("USER"));
@@ -12,3 +13,7 @@ import { getItemLocalStorage } from "../functions/getIemLocalStorage.js";
 
   document.getElementById("lists-title").appendChild(h1);
 })();
+
+document
+  .getElementById("icon-create-list")
+  .addEventListener("click", openModalNewList);

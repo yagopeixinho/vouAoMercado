@@ -1,6 +1,6 @@
 import { verifyFormFields } from "../functions/verifyFormFields.js";
 import { changeMainColors } from "../functions/changeMainColors.js";
-import { getItemLocalStorage } from "../functions/getLocalStorage.js";
+import { getItemLocalStorage } from "../functions/getItemLocalStorage.js";
 
 window.addEventListener("load", () => {
   (function setInputColorValue() {

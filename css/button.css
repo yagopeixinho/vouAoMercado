@@ -1,7 +1,29 @@
 @import "global.css";
 
+.main-button-color-white {
+  background-color: var(--main-color-white);
+  color: var(--main-color-black);
+  width: 230px;
+  height: 60px;
+  border-radius: 6px;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
 .main-button-color-3 {
   background-color: var(--main-color-3);
+  color: var(--main-color-white);
+  width: 230px;
+  height: 60px;
+  border-radius: 6px;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.main-button-color-2 {
+  background-color: var(--main-color-2);
   color: var(--main-color-white);
   width: 230px;
   height: 60px;
