@@ -1,7 +1,20 @@
 import { verifyFormFields } from "../functions/verifyFormFields.js";
 import { changeMainColors } from "../functions/changeMainColors.js";
+import { getItemLocalStorage } from "../functions/getLocalStorage.js";
 
-document.getElementById("log-in-button").addEventListener("click", createUser);
+window.addEventListener("load", () => {
+  (function setInputColorValue() {
+    document.getElementById("initial-color-input").value = getItemLocalStorage(
+      "USER_FAVORITE_COLOR"
+    );
+  })();
+});
+
+window.addEventListener("keypress", (ev) => {
+  if (ev.code === "Enter") {
+    createUser(ev);
+  }
+});
 
 document
   .getElementById("initial-color-input")
@@ -10,8 +23,8 @@ document
     changeMainColors();
   });
 
-function createUser(e) {
-  e.preventDefault();
+function createUser(ev) {
+  ev.preventDefault(ev);
 
   if (verifyFormFields("initial-form")) {
     const user = {
