@@ -1,2 +1,33 @@
 @import "../../../css/global.css";
+@import "../../../css//fonts.css";
 
+.container-header {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  margin: 195px 124px 21px 120px;
+}
+
+.container-main {
+  background-color: var(--main-color-white);
+  border-radius: 140px 140px 0 0;
+  height: 70vh;
+  padding: 80px 200px;
+}
+
+.input-info-container {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 0 auto;
+}
+.container-input-search {
+  display: flex;
+  justify-content: center;
+}
+
+.container-icon-new-list {
+  padding: 8px 0;
+  cursor: pointer;
+}
