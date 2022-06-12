@@ -4,6 +4,7 @@
 @import "input.css";
 @import "__createNewListModal.css";
 @import "__telaListagem.css";
+@import "__individualList.css";
 
 * {
   margin: 0;

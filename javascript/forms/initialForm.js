@@ -4,9 +4,7 @@ import { getItemLocalStorage } from "../functions/getItemLocalStorage.js";
 import { setItemLocalStorage } from "../functions/setItemLocalStorage.js";
 
 window.addEventListener("load", () => {
-  debugger;
   (function setInputColorValue() {
-    debugger;
     const color = getItemLocalStorage("USER_FAVORITE_COLOR");
 
     if (color === null) {
@@ -33,8 +31,6 @@ document
 
 function createUser(ev) {
   ev.preventDefault(ev);
-  debugger;
-
   if (verifyFormFields("initial-form")) {
     const user = {
       username: document.getElementById("username").value,

@@ -1,11 +1,8 @@
-
-
-
-
+import { getAllUserLists } from "../functions/getAllUserLists.js";
 
 (function createProductList() {
   debugger;
-  const userList = getAllUserLists();
+  const userList = getAllUserLists() ?? [];
 
   userList.forEach((list) => {
     debugger;
@@ -46,8 +43,8 @@
           </div>
       `;
 
-    document.getElementById("list-container").appendChild(cardProduct);
+    document
+      .getElementById("list-container-individual")
+      .appendChild(cardProduct);
   });
-
-  debugger;
 })();
