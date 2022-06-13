@@ -8,7 +8,7 @@ export function openModalNewList() {
 
   modalCreateNewList.classList.add("create-new-list-modal");
   modalCreateNewList.innerHTML = `
-        <div class="modal-new-list-container-form">
+      <div class="modal-new-list-container-form">
         <div class="modal-new-list-header" id="modal-new-list-header">
           <div class="container-image-close-modal">
             <img src="../../../assets/icons/close-x-icon.svg" id="x-close-modal" />
@@ -95,7 +95,7 @@ export function openModalNewList() {
       listColor: listColor.value,
       totalPrice: 0,
       totalItens: 0,
-      productsList: [{}],
+      productsList: [],
     };
 
     localStorageTotalList.push(newList);

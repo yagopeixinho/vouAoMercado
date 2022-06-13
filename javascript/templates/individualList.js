@@ -1,12 +1,17 @@
 import { getAllUserLists } from "../functions/getAllUserLists.js";
+import { openModalCreateNewProduct } from "../forms/modals/createNewProduct.js";
+
+const userList = getAllUserLists() ?? [];
+const urlParams = new URLSearchParams(window.location.search);
+const params = parseInt(urlParams.get("item"));
+const thisList = userList[params];
+
+debugger;
 
 (function createProductList() {
-  const userList = getAllUserLists() ?? [];
+  debugger;
 
-  const urlParams = new URLSearchParams(window.location.search);
-  const params = parseInt(urlParams.get("item"));
-
-  userList[params].productsList.forEach((list) => {
+  thisList.productsList.forEach((list) => {
     const cardProduct = document.createElement("div");
     cardProduct.classList.add("card-product");
 
@@ -49,3 +54,7 @@ import { getAllUserLists } from "../functions/getAllUserLists.js";
       .appendChild(cardProduct);
   });
 })();
+
+document.getElementById("icon-create-product").addEventListener("click", () => {
+  openModalCreateNewProduct(thisList);
+});

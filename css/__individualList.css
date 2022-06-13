@@ -14,20 +14,33 @@
   padding: 80px 60px 0 60px;
 }
 
-.input-info-container {
+.input-info-container-individual-list {
   display: flex;
-  flex-direction: column;
-  width: 50%;
-  margin: 0 auto;
+  flex-direction: row;
+  gap: 30px;
+  align-items: center;
+}
+.icon-label {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  color: #000000;
+  font-family: "Roboto";
+  display: flex;
 }
 .container-input-search {
   display: flex;
   justify-content: center;
 }
 
-.container-icon-new-list {
+.container-icons-individual-list {
   padding: 8px 0;
   cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
 }
 
 .lists-container {

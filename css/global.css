@@ -5,6 +5,7 @@
 @import "__createNewListModal.css";
 @import "__telaListagem.css";
 @import "__individualList.css";
+@import "__createNewProductModal.css";
 
 * {
   margin: 0;

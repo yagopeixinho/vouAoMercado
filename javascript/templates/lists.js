@@ -1,4 +1,4 @@
-import { openModalNewList } from "../forms/createNewList.js";
+import { openModalNewList } from "../forms/modals/createNewList.js";
 import { getAllUserLists } from "../functions/getAllUserLists.js";
 import { getItemLocalStorage } from "../functions/getItemLocalStorage.js";
 
