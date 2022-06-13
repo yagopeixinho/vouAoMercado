@@ -1,11 +1,12 @@
 import { getAllUserLists } from "../functions/getAllUserLists.js";
 
 (function createProductList() {
-  debugger;
   const userList = getAllUserLists() ?? [];
 
-  userList.forEach((list) => {
-    debugger;
+  const urlParams = new URLSearchParams(window.location.search);
+  const params = parseInt(urlParams.get("item"));
+
+  userList[params].productsList.forEach((list) => {
     const cardProduct = document.createElement("div");
     cardProduct.classList.add("card-product");
 

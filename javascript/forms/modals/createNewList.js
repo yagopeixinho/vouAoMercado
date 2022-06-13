@@ -1,5 +1,5 @@
-import { getItemLocalStorage } from "../functions/getItemLocalStorage.js";
-import { setItemLocalStorage } from "../functions/setItemLocalStorage.js";
+import { getItemLocalStorage } from "../../functions/getItemLocalStorage.js";
+import { setItemLocalStorage } from "../../functions/setItemLocalStorage.js";
 
 const favoriteColor = getItemLocalStorage("USER_FAVORITE_COLOR");
 

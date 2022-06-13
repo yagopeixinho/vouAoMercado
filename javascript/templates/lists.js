@@ -49,7 +49,6 @@ document.getElementById("list-container").addEventListener("click", (ev) => {
   debugger;
   const listId = ev.target.dataset.index;
   window.location.replace(
-    `../../pages/individualListing/individualListing.html?${listId}`
+    `../../pages/individualListing/individualListing.html?item=${listId}`
   );
 });
-
