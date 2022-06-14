@@ -1,65 +1,57 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>vouAoMercado!</title>
-    <link rel="stylesheet" href="css/__index.css" />
-    <link rel="stylesheet" href="css/fonts.css" />
-    <link rel="stylesheet" href="css/input.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+
+    <title>Document</title>
   </head>
+  <body>
+    <div class="login-container">
+      <div class="login-left-side"></div>
 
-  <body class="favorite-user-color">
-    <main>
-      <div class="initial-interface">
-        <div class="initial-interface-left favorite-user-color"></div>
+      <div class="login-right-side">
+        <div class="login-right-side-header">
+          <span class="favorite-color">
+            <h2 class="main-font-h4">Qual a sua cor favorita?</h2>
+            <input
+              class="main-input-color"
+              type="color"
+              id="user-favorite-color"
+            />
+          </span>
+        </div>
 
-        <div class="initial-interface-right">
-          <div class="container-header-color">
-            <div class="container-color-input">
-              <label>
-                <h3 class="main-font-h3">Qual a sua cor favorita?</h3>
-              </label>
-              <input type="color" id="initial-color-input" />
-            </div>
-          </div>
+        <div class="login-title">
+          <img src="assets/media/icons/cart-emoji-icon.svg" />
+          <h1 class="main-font-h1">Vai ao mercado?</h1>
+        </div>
 
-          <div class="container-main-form">
-            <div class="first-access-container">
-              <div>
-                <h1 class="main-font-h1 title-form">🛒 Vai ao mercado?</h1>
-              </div>
-              <form id="initial-form">
-                <div class="initial-interface-form">
-                  <div class="initial-interface-container-input">
-                    <label>
-                      <h2 class="main-font-h2">Qual o seu nome?</h2>
-                    </label>
-                    <input
-                      type="text"
-                      id="username"
-                      class="input-icon-left-user"
-                      required
-                      placeholder="Informe o seu nome"
-                    />
-                  </div>
+        <div class="login-form-container">
+          <div class="login-form">
+            <input
+              class="main-input-text input-login input-user-favorite-color-hover"
+              placeholder="Qual o seu nome?"
+            />
 
-                  <div
-                    class="main-font-h3 acess-key-initial-interface container-acess"
-                    id="log-in-key"
-                    onsubmit=""
-                  >
-                    Pressione enter para continuar
-                  </div>
-                </div>
-              </form>
+            <div>
+              <h4 class="main-font-h5 login-press-enter">
+                Pressione enter para continuar
+              </h4>
             </div>
           </div>
         </div>
       </div>
-    </main>
-    <script src="javascript/forms/initialForm.js" type="module"></script>
-    <script src="javascript/global.js" type="module"></script>
+    </div>
+
+    <footer>
+      <script src="scripts/javascript/scripts.js" type="module"></script>
+      <script
+        src="scripts/javascript/vouAoMercado/$login.js"
+        type="module"
+      ></script>
+    </footer>
   </body>
 </html>

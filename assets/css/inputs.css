@@ -1,0 +1,80 @@
+input::placeholder {
+  font-weight: 400;
+  line-height: 15px;
+  color: var(--main-bg-color-neutral);
+}
+
+.input-user-favorite-color-hover:focus {
+  border-bottom: 1px solid var(--main-bg-color-1);
+  transition: ease-in 1s;
+}
+
+/* MAIN INPUT TEXT */
+.main-input-text {
+  width: 100%;
+  border-style: none none solid none;
+  border-bottom: 1px solid var(--main-bg-color-neutral);
+  padding: 10px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 15px;
+  font-family: "Raleway", sans-serif;
+}
+
+/* INPUT ICON LEFT */
+.main-input-icon-left {
+  width: 100%;
+  border: 1px solid var(--main-bg-color-neutral);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 15px;
+  font-family: "Raleway", sans-serif;
+  padding: 10px 10px 10px 50px;
+}
+.main-input-icon-left::placeholder {
+  padding: 10px 10px 10px 0;
+}
+
+.container-input-icon-left-img {
+  position: relative;
+  bottom: 40px;
+  left: 10px;
+}
+
+/* --> html   <div class="container-input-icon-left">
+      <input
+        type="text"
+        placeholder="Faça uma pesquisa"
+        class="main-input-icon-left"
+      />
+      <img
+        src="assets/media/icons/user-icon.png"
+        class="container-input-icon-left-img"
+      />
+    </div> */
+
+/* INPUT ICON RIGHT */
+.main-input-icon-right {
+  width: 100%;
+  border: 1px solid var(--main-bg-color-neutral);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 15px;
+  font-family: "Raleway", sans-serif;
+  padding: 10px 10px 10px 10px;
+}
+.main-input-icon-right::placeholder {
+  padding: 10px 10px 10px 0;
+}
+.container-input-icon-right-img {
+  position: relative;
+  bottom: 40px;
+  right: unset;
+}
+
+.main-input-color {
+  cursor: pointer;
+  background: var(--main-bg-color-light);
+  height: 34px;
+  border: 1px solid var(--main-bg-color-neutral);
+}
