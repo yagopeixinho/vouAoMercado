@@ -4,8 +4,10 @@
 @import "buttons.css";
 @import "fonts.css";
 @import "inputs.css";
+@import "modals.css";
 
 @import "vouAoMercado/__login.css";
+@import "vouAoMercado/__listViews.css";
 
 * {
   margin: 0;
