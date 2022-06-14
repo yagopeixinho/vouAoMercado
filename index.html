@@ -5,8 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="assets/css/styles.css" />
+    <link
+      rel="icon"
+      href="assets/media/icons/favicon/favicon.ico"
+      type="image/png"
+    />
 
-    <title>Document</title>
+    <title>!VouAoMercado | Login</title>
   </head>
   <body>
     <div class="login-container">
@@ -28,21 +33,30 @@
           <img src="assets/media/icons/cart-emoji-icon.svg" />
           <h1 class="main-font-h1">Vai ao mercado?</h1>
         </div>
+        <form name="loginForm" id="login-form">
+          <div class="login-form-container">
+            <div class="login-form">
+              <input
+                oninvalid="this.setCustomValidity('Seu nome é obrigatório para poder continuar');"
+                class="main-input-text input-login input-user-favorite-color-hover"
+                placeholder="Qual o seu nome?"
+                required
+                name="username"
+                id="input-login-username"
+                maxlength="20"
+              />
 
-        <div class="login-form-container">
-          <div class="login-form">
-            <input
-              class="main-input-text input-login input-user-favorite-color-hover"
-              placeholder="Qual o seu nome?"
-            />
-
-            <div>
-              <h4 class="main-font-h5 login-press-enter">
-                Pressione enter para continuar
-              </h4>
+              <div>
+                <h4
+                  class="main-font-h5 login-press-enter"
+                  id="press-enter-to-continue"
+                >
+                  Pressione enter para continuar
+                </h4>
+              </div>
             </div>
           </div>
-        </div>
+        </form>
       </div>
     </div>
 

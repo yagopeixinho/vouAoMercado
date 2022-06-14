@@ -60,4 +60,23 @@
 
 .login-press-enter {
   color: var(--main-bg-color-neutral);
+  animation: press-enter-to-continue 8s alternate;
+}
+
+@keyframes press-enter-to-continue {
+  0% {
+    opacity: 100%;
+  }
+
+  30% {
+    opacity: 80%;
+  }
+
+  50% {
+    opacity: 50%;
+  }
+
+  90% {
+    opacity: 80%;
+  }
 }

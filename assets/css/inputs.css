@@ -9,7 +9,6 @@ input::placeholder {
   transition: ease-in 1s;
 }
 
-/* MAIN INPUT TEXT */
 .main-input-text {
   width: 100%;
   border-style: none none solid none;
@@ -19,9 +18,9 @@ input::placeholder {
   font-weight: 400;
   line-height: 15px;
   font-family: "Raleway", sans-serif;
+  transition: ease-in 1s;
 }
 
-/* INPUT ICON LEFT */
 .main-input-icon-left {
   width: 100%;
   border: 1px solid var(--main-bg-color-neutral);
@@ -53,8 +52,8 @@ input::placeholder {
       />
     </div> */
 
-/* INPUT ICON RIGHT */
-.main-input-icon-right {
+
+    .main-input-icon-right {
   width: 100%;
   border: 1px solid var(--main-bg-color-neutral);
   font-size: 18px;
