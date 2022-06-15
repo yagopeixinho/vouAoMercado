@@ -1,19 +1,15 @@
-import { changeUserFavoriteColor } from "../functions/changeUserFavoriteColor.js";
 import { getLocalStorageItem } from "../functions/getLocalStorageItem.js";
 import { setLocalStorageItem } from "../functions/setLocalStorageItem.js";
+import { setMainColorBackground } from "../functions/setMainColorBackground.js";
 import { verifyFormFields } from "../functions/verifyFormFields.js";
 
-const userFavoriteColor = getComputedStyle(
-  document.documentElement
-).getPropertyValue("--main-bg-color-1");
-const inputColorLogin = document.getElementById("user-favorite-color");
-
 (function init() {
+  const inputColorLogin = document.getElementById("user-favorite-color");
   const initialColor = getLocalStorageItem("USER_FAVORITE_COLOR");
 
   inputColorLogin.addEventListener("change", (ev) => {
-    changeUserFavoriteColor(ev.target.value);
     setLocalStorageItem("USER_FAVORITE_COLOR", ev.target.value);
+    setMainColorBackground();
   });
 
   window.addEventListener("keypress", (ev) => {
@@ -24,12 +20,8 @@ const inputColorLogin = document.getElementById("user-favorite-color");
     }
   });
 
-  if (initialColor === null) {
-    inputColorLogin.value = userFavoriteColor;
-  } else {
-    inputColorLogin.value = initialColor;
-    changeUserFavoriteColor(initialColor);
-  }
+  inputColorLogin.value = initialColor;
+  setMainColorBackground();
 })();
 
 function createUser(ev) {
