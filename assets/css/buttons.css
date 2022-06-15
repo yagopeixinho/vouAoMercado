@@ -1,6 +1,6 @@
 .btn-main-color-1 {
-  width: 320px;
-  height: 90px;
+  width: 230px;
+  height: 70px;
   background-color: var(--main-bg-color-1);
   color: var(--main-bg-color-light);
   border-radius: 10px;
@@ -8,13 +8,13 @@
   font-family: "Raleway", sans-serif;
   font-size: 20px;
   font-weight: 400;
-  font-size: 30px;
   line-height: 35px;
+  cursor: pointer;
 }
 
 .btn-main-color-2 {
-  width: 320px;
-  height: 90px;
+  width: 230px;
+  height: 70px;
   background-color: var(--main-bg-color-2);
   color: var(--main-bg-color-light);
   border-radius: 10px;
@@ -22,13 +22,13 @@
   font-family: "Raleway", sans-serif;
   font-size: 20px;
   font-weight: 400;
-  font-size: 30px;
   line-height: 35px;
+  cursor: pointer;
 }
 
 .btn-main-color-3 {
-  width: 320px;
-  height: 90px;
+  width: 230px;
+  height: 70px;
   background-color: var(--main-bg-color-3);
   color: var(--main-bg-color-light);
   border-radius: 10px;
@@ -36,6 +36,6 @@
   font-family: "Raleway", sans-serif;
   font-size: 20px;
   font-weight: 400;
-  font-size: 30px;
   line-height: 35px;
+  cursor: pointer;
 }

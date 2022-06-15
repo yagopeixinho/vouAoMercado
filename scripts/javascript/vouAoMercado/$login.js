@@ -1,7 +1,7 @@
-import { changeUserFavoriteColor } from "../../functions/changeUserFavoriteColor.js";
-import { getLocalStorageItem } from "../../functions/getLocalStorageItem.js";
-import { setLocalStorageItem } from "../../functions/setLocalStorageItem.js";
-import { verifyFormFields } from "../../functions/verifyFormFields.js";
+import { changeUserFavoriteColor } from "../functions/changeUserFavoriteColor.js";
+import { getLocalStorageItem } from "../functions/getLocalStorageItem.js";
+import { setLocalStorageItem } from "../functions/setLocalStorageItem.js";
+import { verifyFormFields } from "../functions/verifyFormFields.js";
 
 const userFavoriteColor = getComputedStyle(
   document.documentElement

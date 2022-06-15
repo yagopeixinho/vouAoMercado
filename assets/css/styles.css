@@ -8,6 +8,7 @@
 
 @import "vouAoMercado/__login.css";
 @import "vouAoMercado/__listViews.css";
+@import "vouAoMercado/__modalCreateNewList.css";
 
 * {
   margin: 0;

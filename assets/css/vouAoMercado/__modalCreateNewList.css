@@ -1,0 +1,45 @@
+.title-and-icone {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.title-and-icone img {
+  width: 60px;
+}
+
+.modal-new-list-form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+}
+
+.modal-new-list-input-text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.modal-new-list-input-color-container {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+.modal-new-list-input-color {
+  width: 86px;
+  height: 58px;
+}
+
+.input-modal-new-list {
+  font-size: 26px;
+}
+.input-modal-new-list::placeholder {
+  padding: 20px 6px;
+}
+
+.new-list-btn-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

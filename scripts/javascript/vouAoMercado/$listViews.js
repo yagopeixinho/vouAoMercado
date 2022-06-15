@@ -1,12 +1,12 @@
 import { getLocalStorageItem } from "../functions/getLocalStorageItem.js";
 import { createNewListModal } from "../modals/createNewListModal.js";
 
+document
+  .getElementById("new-item-icon")
+  .addEventListener("click", createNewListModal);
+
 (function init() {
   const user = JSON.parse(getLocalStorageItem("USER"));
-
-  document
-    .getElementById("new-item-icon")
-    .addEventListener("click", createNewListModal());
 
   document.getElementById(
     "list-view-title"

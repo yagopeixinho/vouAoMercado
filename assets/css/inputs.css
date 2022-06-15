@@ -52,8 +52,7 @@ input::placeholder {
       />
     </div> */
 
-
-    .main-input-icon-right {
+.main-input-icon-right {
   width: 100%;
   border: 1px solid var(--main-bg-color-neutral);
   font-size: 18px;
