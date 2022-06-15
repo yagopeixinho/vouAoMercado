@@ -35,7 +35,7 @@ export function createNewListModal() {
         </div>
         <div class="modal-container-footer">
           <div class="new-list-btn-container">
-              <button class="btn-main-color-3">Cancelar</button>
+              <button class="btn-main-color-3" id="btn-close-modal">Cancelar</button>
               <button class="btn-main-color-1">Salvar</button>
             </div>
           </div>
@@ -44,5 +44,23 @@ export function createNewListModal() {
     </div>
  `;
 
+  function createNewList() {
+
+  }
+
+  function closeNewListModal() {
+    modal.remove();
+  }
+
   document.getElementById("list-views").appendChild(modal);
+
+  document
+    .getElementById("btn-close-modal")
+    .addEventListener("click", closeNewListModal);
+
+  document
+    .getElementById("btn-close-modal")
+    .addEventListener("click", createNewList);
+
+  document.getElementById("btn-create-list");
 }
