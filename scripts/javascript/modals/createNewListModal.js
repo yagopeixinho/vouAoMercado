@@ -7,8 +7,8 @@ export function createNewListModal() {
       <div class="modal-container-body">
         <div class="modal-container-header">
           <span class="title-and-icone">
-            <h1 class="main-font-h1">Criando uma nova lista!</h1>
             <img src="../assets/media/icons/list-icon.svg" />
+            <h1 class="main-font-h1">Criando uma nova lista!</h1>
           </span>
         </div>
         <div class="modal-container-main">
