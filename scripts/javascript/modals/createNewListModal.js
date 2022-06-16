@@ -89,6 +89,11 @@ export function createNewListModal() {
     .getElementById("btn-close-modal")
     .addEventListener("click", closeNewListModal);
 
+  document.getElementById("colorList").addEventListener("change", (ev) => {
+    document.getElementById("btn-close-modal").style.backgroundColor =
+      ev.target.value;
+  });
+
   document
     .getElementById("btn-create-list")
     .addEventListener("click", createNewList);
