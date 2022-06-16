@@ -20,8 +20,8 @@
 }
 
 .container-icon-new-item img {
-    margin-bottom: 16px;
-    cursor: pointer;
+  margin-bottom: 16px;
+  cursor: pointer;
 }
 
 .lists-content {
@@ -37,9 +37,6 @@
   border-bottom: 1px solid var(--main-bg-color-neutral);
 }
 
-.lists-container {
-}
-
 .user-lists {
   width: 84%;
   display: flex;
@@ -49,10 +46,12 @@
 }
 
 .card-list {
-  background-color: rgb(197, 197, 197);
+  background-color: var(--main-bg-color-1);
   width: 258px;
   height: 213px;
   border-radius: 20px;
-  background: #d9d9d9;
   border-radius: 4px;
+}
+.title-card {
+  padding: 12px;
 }

@@ -60,11 +60,11 @@ export function createNewListModal() {
 
     const form = document.forms.newList;
 
-    const [colorList, listName] = form;
+    const [listName, colorList] = form;
 
     const newList = {
-      colorList: colorList.value,
       listName: listName.value,
+      colorList: colorList.value,
     };
 
     lists.push(newList);
