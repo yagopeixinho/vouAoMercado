@@ -3,11 +3,9 @@ import { createNewListModal } from "../modals/createNewListModal.js";
 
 (function init() {
   const user = JSON.parse(getLocalStorageItem("USER"));
-  debugger;
   const lists = JSON.parse(getLocalStorageItem("LISTS"));
 
   lists?.forEach((item) => {
-    debugger;
 
     const userLists = document.createElement("div");
     userLists.classList.add("card-list");

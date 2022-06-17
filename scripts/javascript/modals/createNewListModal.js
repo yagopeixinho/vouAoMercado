@@ -55,7 +55,6 @@ export function createNewListModal() {
  `;
 
   function createNewList() {
-    debugger;
     const lists = JSON.parse(getLocalStorageItem("LISTS")) ?? [];
 
     const form = document.forms.newList;
