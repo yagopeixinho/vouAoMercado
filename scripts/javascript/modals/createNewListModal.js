@@ -5,7 +5,6 @@ export function createNewListModal() {
   const modal = document.createElement("div");
   modal.classList.add("modal");
   modal.innerHTML = `
-
       <div class="modal-container">
         <div class="modal-container-body">
           <div class="modal-container-header">
@@ -39,7 +38,6 @@ export function createNewListModal() {
                   />
                 </div>
               </div>          
-  
             </div>  
           </form>
           <div class="modal-container-footer">
@@ -51,7 +49,6 @@ export function createNewListModal() {
           </div>
         </div>
       </div>
-
  `;
 
   function createNewList() {

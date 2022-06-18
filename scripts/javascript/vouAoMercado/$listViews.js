@@ -5,11 +5,11 @@ import { createNewListModal } from "../modals/createNewListModal.js";
   const user = JSON.parse(getLocalStorageItem("USER"));
   const lists = JSON.parse(getLocalStorageItem("LISTS"));
 
-  lists?.forEach((item) => {
-
+  lists?.forEach((item, index) => {
     const userLists = document.createElement("div");
     userLists.classList.add("card-list");
     userLists.style.backgroundColor = item.colorList;
+    userLists.dataset.index = index;
 
     userLists.innerHTML = `
       <div class="title-card">
@@ -18,6 +18,12 @@ import { createNewListModal } from "../modals/createNewListModal.js";
     `;
 
     document.getElementById("user-lists").appendChild(userLists);
+  });
+
+  document.getElementById("lists-container").addEventListener("click", (ev) => {
+    const listId = ev.target.dataset.index;
+
+    window.location.replace(`/views/individualList.html?item=${listId}`);
   });
 
   document
