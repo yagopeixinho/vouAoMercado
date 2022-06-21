@@ -68,7 +68,7 @@
   display: flex;
   flex-direction: column;
   gap: 18px;
-  padding: 40px 40px 22px 40px;
+  padding: 40px 40px 30px 40px;
 }
 
 .price-label {
@@ -91,7 +91,7 @@
 
 .product-card-amount-container {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 
 .product-card-amount {
@@ -119,4 +119,16 @@
 
 .product-card-footer {
   padding: 0 40px 40px;
+}
+
+#product-card-plus-icon,
+#product-card-minus-icon {
+  cursor: pointer;
+}
+
+.options-card {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  cursor: pointer;
 }

@@ -44,16 +44,15 @@ export function createNewItemModal() {
                                     </div>
                                     <div class="amount-itens-container">
                                         <div class="amount-container">
-                                            <span id="product-amount-plus">
-                                                <img src="../assets/media/icons/plus-icon.svg">
+                                           <span id="product-amount-minus">
+                                                <img src="../assets/media/icons/minus-icon.svg">
                                             </span>
                                             <span>
                                                 <input type="number" id="product-amount" value="1"
                                                     class="amount-itens-input-text" disabled name="productAmount">
                                             </span>
-
-                                            <span id="product-amount-minus">
-                                                <img src="../assets/media/icons/minus-icon.svg">
+                                            <span id="product-amount-plus">
+                                                <img src="../assets/media/icons/plus-icon.svg">
                                             </span>
                                         </div>
                                     </div>

@@ -11,6 +11,7 @@
 @import "vouAoMercado/__modalCreateNewList.css";
 @import "vouAoMercado/__individualList.css";
 @import "vouAoMercado/__createNewItemModal.css";
+@import "vouAoMercado/__confirmationDialog.css";
 
 img {
   -webkit-user-drag: none;

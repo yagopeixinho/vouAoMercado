@@ -2,11 +2,15 @@ import { getIndividualList } from "../functions/getIndividualList.js";
 import { getLocalStorageItem } from "../functions/getLocalStorageItem.js";
 import getUrlParams from "../functions/getUrlParams.js";
 import { setLocalStorageItem } from "../functions/setLocalStorageItem.js";
+import { confirmationDialog } from "../modals/confirmationDialog.js";
 import { createNewItemModal } from "../modals/createNewItemModal.js";
 
 document
   .getElementById("new-item-icon-product")
   .addEventListener("click", createNewItemModal);
+
+const localStorageList = JSON.parse(getLocalStorageItem("LISTS"));
+const idList = getUrlParams("listId");
 
 (function init() {
   const list = getIndividualList();
@@ -38,15 +42,24 @@ document
 
         <div class="product-card-footer">
             <div class="product-card-amount-container">
+              <div class="options-card">
+                  <div>
+                    <img src="../assets/media/icons/edit-icon.svg" data-info-type="edit" data-index="${index}"/>
+                  </div>
+                  <div>
+                    <img src="../assets/media/icons/delete-icon.svg" data-info-type="delete" data-index="${index}"/>
+                  </div>
+                </div>
+
                 <div class="product-card-amount">
                     <div class="product-card-amount-flex">
-                        <img src="../assets/media/icons/minus-icon.svg" id="product-card-minus-icon-${index}" data-signal="minus" data-index=${index}>
+                        <img src="../assets/media/icons/minus-icon.svg" id="product-card-minus-icon" data-signal="minus" data-index="${index}" data-info-type="amount">
 
                         <span class="product-card-amount-input-container">
                             <input type="number" disabled value="${item.productAmount}" class="product-card-amount-input" id="input-amount-${index}"/>
                         </span>
 
-                        <img src="../assets/media/icons/plus-icon.svg" id="product-card-plus-icon-${index}" data-signal="plus" data-index=${index}>
+                        <img src="../assets/media/icons/plus-icon.svg" id="product-card-plus-icon" data-signal="plus" data-index="${index}" data-info-type="amount">
                      </div>
                 </div>
             </div>
@@ -56,31 +69,55 @@ document
     document.getElementById("product-lists").appendChild(productCard);
   });
 
-  document.getElementById("product-lists").addEventListener("click", (ev) => {
-    const localStorageList = JSON.parse(getLocalStorageItem("LISTS"));
-    const idList = getUrlParams("listId");
-    const inputAmount = document.getElementById(
-      `input-amount-${ev.target.dataset.index}`
-    );
-    switch (ev.target.dataset.signal) {
-      case "plus":
-        (list.products[ev.target.dataset.index].productAmount =
-          parseInt(inputAmount.value) + 1),
-          (inputAmount.value =
-            list.products[ev.target.dataset.index].productAmount);
+  function removeProduct(ev) {
+    localStorageList[idList].products.splice(ev.target.dataset.index, 1);
+    setLocalStorageItem("LISTS", JSON.stringify(localStorageList));
+  }
 
-        localStorageList[idList] = list;
-        setLocalStorageItem("LISTS", JSON.stringify(localStorageList));
+  document.getElementById("product-lists").addEventListener("click", (ev) => {
+
+    switch (ev.target.dataset.infoType) {
+      case "edit":
         break;
 
-      case "minus":
-        (list.products[ev.target.dataset.index].productAmount =
-          parseInt(inputAmount.value) - 1),
-          (inputAmount.value =
-            list.products[ev.target.dataset.index].productAmount);
+      case "delete":
+        confirmationDialog(
+          ev,
+          removeProduct,
+          "Cuidado! Você está retirando um produto",
+          "Lembre-se! Remover esse produto o fará desaparececr completamente do sistema. Tem certeza que deseja fazer isso?"
+        );
+        break;
 
-        localStorageList[idList] = list;
-        setLocalStorageItem("LISTS", JSON.stringify(localStorageList));
+      case "amount":
+        const inputAmount = document.getElementById(
+          `input-amount-${ev.target.dataset.index}`
+        );
+        switch (ev.target.dataset.signal) {
+          case "plus":
+            (list.products[ev.target.dataset.index].productAmount =
+              parseInt(inputAmount.value) + 1),
+              (inputAmount.value =
+                list.products[ev.target.dataset.index].productAmount);
+
+            localStorageList[idList] = list;
+            setLocalStorageItem("LISTS", JSON.stringify(localStorageList));
+            break;
+
+          case "minus":
+            if (list.products[ev.target.dataset.index].productAmount > 1) {
+              (list.products[ev.target.dataset.index].productAmount =
+                parseInt(inputAmount.value) - 1),
+                (inputAmount.value =
+                  list.products[ev.target.dataset.index].productAmount);
+
+              localStorageList[idList] = list;
+              setLocalStorageItem("LISTS", JSON.stringify(localStorageList));
+            } else {
+              break;
+            }
+            break;
+        }
         break;
     }
   });
