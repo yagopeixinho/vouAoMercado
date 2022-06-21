@@ -85,3 +85,7 @@ document
     }
   });
 })();
+
+document.getElementById("go-back-icon").addEventListener("click", () => {
+  window.location.replace(`/views/listViews.html`);
+});

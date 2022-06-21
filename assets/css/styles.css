@@ -12,8 +12,15 @@
 @import "vouAoMercado/__individualList.css";
 @import "vouAoMercado/__createNewItemModal.css";
 
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+}
+
 * {
   margin: 0;
   outline: none;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
 }
