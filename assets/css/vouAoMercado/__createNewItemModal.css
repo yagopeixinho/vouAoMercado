@@ -15,7 +15,6 @@
   display: flex;
 }
 
-
 .modal-new-item-form-container {
   display: flex;
   flex-direction: column;
@@ -34,7 +33,7 @@
 }
 
 .amount-itens-input-text {
-  width: 100%; 
+  width: 100%;
   border: none;
   padding: 10px;
   font-size: 40px;
@@ -52,10 +51,4 @@
 
 .amount-itens-container {
   width: 200px;
-}
-
-#product-amount-plus {
-}
-
-#product-amount-minus {
 }
