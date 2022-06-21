@@ -9,6 +9,8 @@
 @import "vouAoMercado/__login.css";
 @import "vouAoMercado/__listViews.css";
 @import "vouAoMercado/__modalCreateNewList.css";
+@import "vouAoMercado/__individualList.css";
+@import "vouAoMercado/__createNewItemModal.css";
 
 * {
   margin: 0;

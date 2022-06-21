@@ -61,6 +61,7 @@ export function createNewListModal() {
     const newList = {
       listName: listName.value,
       colorList: colorList.value,
+      products: []
     };
 
     lists.push(newList);
