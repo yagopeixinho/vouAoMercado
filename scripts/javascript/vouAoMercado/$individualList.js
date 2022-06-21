@@ -11,10 +11,24 @@ document
 
 const localStorageList = JSON.parse(getLocalStorageItem("LISTS"));
 const idList = getUrlParams("listId");
+var list = getIndividualList();
 
-(function init() {
-  const list = getIndividualList();
+function refreshTotalPrice() {
+  var totalPrice = 0;
+  list.products.forEach((item) => {
+    totalPrice = totalPrice + item.productPrice * item.productAmount;
+  });
+  document.getElementById("span-total-price").innerText = `R$${totalPrice}`;
+}
 
+function refreshProductsList() {
+  document.getElementById("product-lists").innerText = "";
+  getProducts();
+}
+
+function getProducts() {
+  list = getIndividualList();
+  document.getElementById("span-total-itens").innerText = list.products.length;
   document.getElementById("products-title").innerText = list.listName;
 
   list?.products?.forEach((item, index) => {
@@ -23,59 +37,62 @@ const idList = getUrlParams("listId");
     productCard.dataset.index = index;
 
     productCard.innerHTML = `
+      <div class="product-card" id="product-card">
+          <div class="product-card-body">
+              <div class="product-card-header">
+                  <div class="product-name">
+                      <h2 class="main-font-h4">${item.productName}</h2>
+                  </div class="product-price">
 
-    <div class="product-card">
-        <div class="product-card-body">
-            <div class="product-card-header">
-                <div class="product-name">
-                    <h2 class="main-font-h4">${item.productName}</h2>
-                </div class="product-price">
-
-                <span class="price-label">R$${item.productPrice}</span>
-            </div>
-            <div class="product-card-main">
-                <div>
-                    <p>${item.productDescription}</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="product-card-footer">
-            <div class="product-card-amount-container">
-              <div class="options-card">
+                  <span class="price-label">R$${item.productPrice}</span>
+              </div>
+              <div class="product-card-main">
                   <div>
-                    <img src="../assets/media/icons/edit-icon.svg" data-info-type="edit" data-index="${index}"/>
+                      <p>${item.productDescription}</p>
                   </div>
-                  <div>
-                    <img src="../assets/media/icons/delete-icon.svg" data-info-type="delete" data-index="${index}"/>
+              </div>
+          </div>
+
+          <div class="product-card-footer">
+              <div class="product-card-amount-container">
+                <div class="options-card">
+                    <div>
+                      <img src="../assets/media/icons/edit-icon.svg" data-info-type="edit" data-index="${index}"/>
+                    </div>
+                    <div>
+                      <img src="../assets/media/icons/delete-icon.svg" data-info-type="delete" data-index="${index}"/>
+                    </div>
                   </div>
-                </div>
 
-                <div class="product-card-amount">
-                    <div class="product-card-amount-flex">
-                        <img src="../assets/media/icons/minus-icon.svg" id="product-card-minus-icon" data-signal="minus" data-index="${index}" data-info-type="amount">
+                  <div class="product-card-amount">
+                      <div class="product-card-amount-flex">
+                          <img src="../assets/media/icons/minus-icon.svg" id="product-card-minus-icon" data-signal="minus" data-index="${index}" data-info-type="amount">
 
-                        <span class="product-card-amount-input-container">
-                            <input type="number" disabled value="${item.productAmount}" class="product-card-amount-input" id="input-amount-${index}"/>
-                        </span>
+                          <span class="product-card-amount-input-container">
+                              <input type="number" disabled value="${item.productAmount}" class="product-card-amount-input" id="input-amount-${index}"/>
+                          </span>
 
-                        <img src="../assets/media/icons/plus-icon.svg" id="product-card-plus-icon" data-signal="plus" data-index="${index}" data-info-type="amount">
-                     </div>
-                </div>
-            </div>
-        </div>                           
-    </div>`;
-
+                          <img src="../assets/media/icons/plus-icon.svg" id="product-card-plus-icon" data-signal="plus" data-index="${index}" data-info-type="amount">
+                      </div>
+                  </div>
+              </div>
+          </div>                           
+      </div>`;
     document.getElementById("product-lists").appendChild(productCard);
   });
+}
+
+(function init() {
+  refreshTotalPrice();
+  getProducts();
 
   function removeProduct(ev) {
     localStorageList[idList].products.splice(ev.target.dataset.index, 1);
     setLocalStorageItem("LISTS", JSON.stringify(localStorageList));
+    refreshProductsList();
   }
 
   document.getElementById("product-lists").addEventListener("click", (ev) => {
-
     switch (ev.target.dataset.infoType) {
       case "edit":
         break;
@@ -84,9 +101,10 @@ const idList = getUrlParams("listId");
         confirmationDialog(
           ev,
           removeProduct,
-          "Cuidado! Você está retirando um produto",
-          "Lembre-se! Remover esse produto o fará desaparececr completamente do sistema. Tem certeza que deseja fazer isso?"
+          "Cuidado! Você está retirando um produto da lista!",
+          "Lembre-se! Remover esse produto o fará desaparecer completamente do sistema. Tem certeza que deseja fazer isso?"
         );
+
         break;
 
       case "amount":
@@ -102,6 +120,7 @@ const idList = getUrlParams("listId");
 
             localStorageList[idList] = list;
             setLocalStorageItem("LISTS", JSON.stringify(localStorageList));
+            refreshTotalPrice();
             break;
 
           case "minus":
@@ -113,6 +132,7 @@ const idList = getUrlParams("listId");
 
               localStorageList[idList] = list;
               setLocalStorageItem("LISTS", JSON.stringify(localStorageList));
+              refreshTotalPrice();
             } else {
               break;
             }

@@ -20,7 +20,6 @@
 }
 
 .container-icon-new-item img {
-  margin-bottom: 16px;
   cursor: pointer;
 }
 
@@ -34,6 +33,7 @@
 
 .tools-container {
   width: 40%;
+  padding-bottom: 26px;
   border-bottom: 1px solid var(--main-bg-color-neutral);
 }
 
