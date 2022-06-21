@@ -1,21 +1,20 @@
+import { getIndividualList } from "../functions/getIndividualList.js";
 import { getLocalStorageItem } from "../functions/getLocalStorageItem.js";
+import { setLocalStorageItem } from "../functions/setLocalStorageItem.js";
 import { createNewItemModal } from "../modals/createNewItemModal.js";
 
 (function init() {
-  const lists = JSON.parse(getLocalStorageItem("LISTS"));
-  const urlParams = new URLSearchParams(window.location.search);
+  const list = getIndividualList();
 
-  const listId = parseInt(urlParams.get("item"));
-  const openList = lists[listId];
+  document.getElementById("products-title").innerText = list.listName;
 
-  document.getElementById("products-title").innerText = openList.listName;
-
-  openList?.products?.forEach((item) => {
+  list?.products?.forEach((item, index) => {
     const productCard = document.createElement("div");
     productCard.classList.add("product-card");
+    productCard.dataset.index = index;
 
     productCard.innerHTML = `
-    
+
     <div class="product-card">
         <div class="product-card-body">
             <div class="product-card-header">
@@ -36,11 +35,13 @@ import { createNewItemModal } from "../modals/createNewItemModal.js";
             <div class="product-card-amount-container">
                 <div class="product-card-amount">
                     <div class="product-card-amount-flex">
-                        <img src="../assets/media/icons/minus-icon.svg">
+                        <img src="../assets/media/icons/minus-icon.svg" id="product-card-minus-icon-${index}">
+
                         <span class="product-card-amount-input-container">
-                            <input type="number" disabled value="${item.productAmount}" class="product-card-amount-input" />
+                            <input type="number" disabled value="${item.productAmount}" class="product-card-amount-input" id="input-amount-${index}"/>
                         </span>
-                        <img src="../assets/media/icons/plus-icon.svg">
+
+                        <img src="../assets/media/icons/plus-icon.svg" id="product-card-plus-icon-${index}">
                      </div>
                 </div>
             </div>
@@ -48,6 +49,10 @@ import { createNewItemModal } from "../modals/createNewItemModal.js";
     </div>`;
 
     document.getElementById("product-lists").appendChild(productCard);
+
+    document
+      .getElementById("product-lists")
+      .addEventListener("click", (ev) => {});
   });
 
   document

@@ -61,14 +61,14 @@ export function createNewListModal() {
     const newList = {
       listName: listName.value,
       colorList: colorList.value,
-      products: []
+      products: [],
     };
 
     lists.push(newList);
 
     try {
       setLocalStorageItem("LISTS", JSON.stringify(lists));
-      closeNewListModal();
+      window.location.replace(`/views/listViews.html`);
     } catch (error) {
       alert(
         `Ocorreu um erro: ${error} - Se isso parece um problema técnico, entre em contato com o desenvolvedor ou tente novamente mais tarde.`

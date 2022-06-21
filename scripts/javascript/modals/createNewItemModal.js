@@ -92,6 +92,7 @@ export function createNewItemModal() {
       openList?.products.push(newItem);
       lists[listId] = openList;
       setLocalStorageItem("LISTS", JSON.stringify(lists));
+      window.location.replace(`/views/individualList.html?item=${listId}`);
     } catch (error) {
       alert(
         `Ocorreu um erro: ${error} - Se isso parece um problema técnico, entre em contato com o desenvolvedor ou tente novamente mais tarde.`
