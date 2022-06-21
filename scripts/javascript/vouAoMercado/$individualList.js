@@ -54,38 +54,34 @@ document
     </div>`;
 
     document.getElementById("product-lists").appendChild(productCard);
+  });
 
-    document.getElementById("product-lists").addEventListener("click", (ev) => {
-      const localStorageList = JSON.parse(getLocalStorageItem("LISTS"));
-      const idList = getUrlParams("listId");
-      const inputAmount = document.getElementById(
-        `input-amount-${ev.target.dataset.index}`
-      );
-      switch (ev.target.dataset.signal) {
-        case "plus":
-          (list.products[ev.target.dataset.index].productAmount =
-            parseInt(inputAmount.value) + 1),
-            (inputAmount.value =
-              list.products[ev.target.dataset.index].productAmount);
+  document.getElementById("product-lists").addEventListener("click", (ev) => {
+    const localStorageList = JSON.parse(getLocalStorageItem("LISTS"));
+    const idList = getUrlParams("listId");
+    const inputAmount = document.getElementById(
+      `input-amount-${ev.target.dataset.index}`
+    );
+    switch (ev.target.dataset.signal) {
+      case "plus":
+        (list.products[ev.target.dataset.index].productAmount =
+          parseInt(inputAmount.value) + 1),
+          (inputAmount.value =
+            list.products[ev.target.dataset.index].productAmount);
 
-          localStorageList[idList] = list;
-          setLocalStorageItem("LISTS", JSON.stringify(localStorageList));
-          break;
+        localStorageList[idList] = list;
+        setLocalStorageItem("LISTS", JSON.stringify(localStorageList));
+        break;
 
-        case "minus":
-          (list.products[ev.target.dataset.index].productAmount =
-            parseInt(inputAmount.value) - 1),
-            (inputAmount.value =
-              list.products[ev.target.dataset.index].productAmount);
+      case "minus":
+        (list.products[ev.target.dataset.index].productAmount =
+          parseInt(inputAmount.value) - 1),
+          (inputAmount.value =
+            list.products[ev.target.dataset.index].productAmount);
 
-          localStorageList[idList] = list;
-          setLocalStorageItem("LISTS", JSON.stringify(localStorageList));
-
-          break;
-
-        default:
-          break;
-      }
-    });
+        localStorageList[idList] = list;
+        setLocalStorageItem("LISTS", JSON.stringify(localStorageList));
+        break;
+    }
   });
 })();
