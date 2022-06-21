@@ -1,7 +1,12 @@
 import { getIndividualList } from "../functions/getIndividualList.js";
 import { getLocalStorageItem } from "../functions/getLocalStorageItem.js";
+import getUrlParams from "../functions/getUrlParams.js";
 import { setLocalStorageItem } from "../functions/setLocalStorageItem.js";
 import { createNewItemModal } from "../modals/createNewItemModal.js";
+
+document
+  .getElementById("new-item-icon-product")
+  .addEventListener("click", createNewItemModal);
 
 (function init() {
   const list = getIndividualList();
@@ -35,13 +40,13 @@ import { createNewItemModal } from "../modals/createNewItemModal.js";
             <div class="product-card-amount-container">
                 <div class="product-card-amount">
                     <div class="product-card-amount-flex">
-                        <img src="../assets/media/icons/minus-icon.svg" id="product-card-minus-icon-${index}">
+                        <img src="../assets/media/icons/minus-icon.svg" id="product-card-minus-icon-${index}" data-signal="minus" data-index=${index}>
 
                         <span class="product-card-amount-input-container">
                             <input type="number" disabled value="${item.productAmount}" class="product-card-amount-input" id="input-amount-${index}"/>
                         </span>
 
-                        <img src="../assets/media/icons/plus-icon.svg" id="product-card-plus-icon-${index}">
+                        <img src="../assets/media/icons/plus-icon.svg" id="product-card-plus-icon-${index}" data-signal="plus" data-index=${index}>
                      </div>
                 </div>
             </div>
@@ -50,12 +55,37 @@ import { createNewItemModal } from "../modals/createNewItemModal.js";
 
     document.getElementById("product-lists").appendChild(productCard);
 
-    document
-      .getElementById("product-lists")
-      .addEventListener("click", (ev) => {});
-  });
+    document.getElementById("product-lists").addEventListener("click", (ev) => {
+      const localStorageList = JSON.parse(getLocalStorageItem("LISTS"));
+      const idList = getUrlParams("listId");
+      const inputAmount = document.getElementById(
+        `input-amount-${ev.target.dataset.index}`
+      );
+      switch (ev.target.dataset.signal) {
+        case "plus":
+          (list.products[ev.target.dataset.index].productAmount =
+            parseInt(inputAmount.value) + 1),
+            (inputAmount.value =
+              list.products[ev.target.dataset.index].productAmount);
 
-  document
-    .getElementById("new-item-icon-product")
-    .addEventListener("click", createNewItemModal);
+          localStorageList[idList] = list;
+          setLocalStorageItem("LISTS", JSON.stringify(localStorageList));
+          break;
+
+        case "minus":
+          (list.products[ev.target.dataset.index].productAmount =
+            parseInt(inputAmount.value) - 1),
+            (inputAmount.value =
+              list.products[ev.target.dataset.index].productAmount);
+
+          localStorageList[idList] = list;
+          setLocalStorageItem("LISTS", JSON.stringify(localStorageList));
+
+          break;
+
+        default:
+          break;
+      }
+    });
+  });
 })();

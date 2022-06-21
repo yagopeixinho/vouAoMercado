@@ -5,7 +5,7 @@ export function createNewItemModal() {
   const lists = JSON.parse(getLocalStorageItem("LISTS"));
   const urlParams = new URLSearchParams(window.location.search);
 
-  const listId = parseInt(urlParams.get("item"));
+  const listId = parseInt(urlParams.get("listId"));
   const openList = lists[listId];
 
   const modal = document.createElement("div");

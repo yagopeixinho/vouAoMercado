@@ -23,7 +23,7 @@ import { createNewListModal } from "../modals/createNewListModal.js";
   document.getElementById("lists-container").addEventListener("click", (ev) => {
     const listId = ev.target.dataset.index;
 
-    window.location.replace(`/views/individualList.html?item=${listId}`);
+    window.location.replace(`/views/individualList.html?listId=${listId}`);
   });
 
   document
