@@ -18,7 +18,7 @@ function getListViews() {
     userLists.innerHTML = `
       <div class="title-card">
         <div>
-          <h4 class="main-font-h4"><textarea type="text" class="input-card-title" id="card-input-title-${index}" data-index="${index}" rows="5" cols="33" style="overflow:hidden"/>${item.listName}</textarea><h4/>
+          <h4 class="main-font-h4"><textarea type="text" class="input-card-title" id="card-input-title-${index}" data-index="${index}" rows="2" cols="33" style="overflow:hidden"/>${item.listName}</textarea><h4/>
         </div>
       </div>
 
