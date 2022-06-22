@@ -124,7 +124,7 @@
     width: 50px;
   }
   .login-left-side {
-    flex: 1;
+    flex: 0.5;
   }
   .login-form {
     width: 68%;
