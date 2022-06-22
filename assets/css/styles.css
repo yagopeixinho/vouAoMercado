@@ -20,6 +20,10 @@ img {
   -o-user-drag: none;
 }
 
+textarea {
+  resize: none;
+}
+
 * {
   margin: 0;
   outline: none;

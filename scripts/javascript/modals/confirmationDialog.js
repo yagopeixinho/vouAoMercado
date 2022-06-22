@@ -19,9 +19,9 @@ export function confirmationDialog(event, idealFunction, header, description) {
                 </form>
                 <div class="modal-container-footer">
                     <div class="new-list-btn-container">
-                        <button class="btn-main-color-3" style="background-color: rgb(77, 201, 114);"
-                            id="btn-cancel-dialog">Cancelar</button>
-                        <button class="btn-main-color-1" id="btn-confirm-dialog" style="background-color: #d14848	">Deletar</button>
+                      <button class="btn-main-color-1" id="btn-confirm-dialog" style="background-color: #d14848	">Deletar</button>
+                      <button class="btn-main-color-3" style="background-color: rgb(77, 201, 114);"
+                          id="btn-cancel-dialog">Cancelar</button>
                     </div>
                 </div>
             </div>

@@ -89,3 +89,16 @@ input {
   border: none;
   border-radius: 20px;
 }
+
+.input-card-title {
+  width: 100%;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 31px;
+  color: #000000;
+  border: none;
+  background-color: transparent;
+  cursor: text;
+}

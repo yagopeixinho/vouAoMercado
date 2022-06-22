@@ -57,10 +57,10 @@ function getProducts() {
               <div class="product-card-amount-container">
                 <div class="options-card">
                     <div>
-                      <img src="../assets/media/icons/edit-icon.svg" data-info-type="edit" data-index="${index}"/>
+                      <img src="../assets/media/icons/edit-icon.svg" data-info-type="edit" data-index="${index}" class="icon-card-product"/>
                     </div>
                     <div>
-                      <img src="../assets/media/icons/delete-icon.svg" data-info-type="delete" data-index="${index}"/>
+                      <img src="../assets/media/icons/delete-icon.svg" data-info-type="delete" data-index="${index}" class="icon-card-product"/>
                     </div>
                   </div>
 

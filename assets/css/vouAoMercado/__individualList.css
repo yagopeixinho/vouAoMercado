@@ -142,3 +142,7 @@
   gap: 12px;
   align-items: center;
 }
+
+.icon-card-product {
+  cursor: pointer;
+}

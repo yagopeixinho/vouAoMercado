@@ -18,7 +18,7 @@ function getListViews() {
     userLists.innerHTML = `
       <div class="title-card">
         <div>
-          <h4 class="main-font-h4">${item.listName}<h4/>
+          <h4 class="main-font-h4"><textarea type="text" class="input-card-title" id="card-input-title-${index}" data-index="${index}" rows="5" cols="33" style="overflow:hidden"/>${item.listName}</textarea><h4/>
         </div>
       </div>
 
@@ -77,6 +77,16 @@ function deleteList(ev) {
         "Eita, você está deletando uma lista inteirinha!",
         "Ao confirmar, toda a lista e seus itens serão deletados permanentemente do sistema. Deseja continuar mesmo assim?"
       );
+    }
+
+    if (ev.target.id === `card-input-title-${ev.target.dataset.index}`) {
+      document.getElementById(ev.target.id).addEventListener("change", (ev) => {
+        console.log(ev.target.value);
+
+        const idList = ev.target.dataset.index;
+        localStorageLists[idList].listName = ev.target.value;
+        setLocalStorageItem("LISTS", JSON.stringify(localStorageLists));
+      });
     }
   });
 
