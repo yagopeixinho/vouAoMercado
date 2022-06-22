@@ -1,8 +1,10 @@
 import { getLocalStorageItem } from "../functions/getLocalStorageItem.js";
 import { setLocalStorageItem } from "../functions/setLocalStorageItem.js";
 import { createNewListModal } from "../modals/createNewListModal.js";
+import { confirmationDialog } from "../modals/confirmationDialog.js";
 
 const user = JSON.parse(getLocalStorageItem("USER"));
+var localStorageLists = JSON.parse(getLocalStorageItem("LISTS"));
 
 function getListViews() {
   const lists = JSON.parse(getLocalStorageItem("LISTS"));
@@ -22,7 +24,7 @@ function getListViews() {
 
         <div class="card-footer">
           <div>
-            <img src="../../../../assets/media/icons/delete-icon.svg" width="30px"/>
+            <img src="../../../../assets/media/icons/delete-icon.svg" width="30px" id="card-input-trash-${index}" data-index="${index}"/>
           </div>
 
           <div>
@@ -37,6 +39,13 @@ function getListViews() {
 
 function refreshListViews() {
   document.getElementById("user-lists").innerHTML = "";
+  getListViews();
+}
+
+function deleteList(ev) {
+  localStorageLists.splice(ev.target.dataset.index, 1);
+  setLocalStorageItem("LISTS", JSON.stringify(localStorageLists));
+  refreshListViews();
 }
 
 (function init() {
@@ -44,6 +53,7 @@ function refreshListViews() {
 
   document.getElementById("lists-container").addEventListener("click", (ev) => {
     const listId = ev.target.dataset.index;
+
     if (ev.target.dataset.index && ev.target.className === "card-list") {
       window.location.replace(`/views/individualList.html?listId=${listId}`);
     }
@@ -52,14 +62,21 @@ function refreshListViews() {
       document
         .getElementById(`card-input-color-${ev.target.dataset.index}`)
         .addEventListener("change", (ev) => {
-          const localStorageLists = JSON.parse(getLocalStorageItem("LISTS"));
           const idList = ev.target.dataset.index;
 
           localStorageLists[idList].colorList = ev.target.value;
           setLocalStorageItem("LISTS", JSON.stringify(localStorageLists));
           refreshListViews();
-          getListViews();
         });
+    }
+
+    if (ev.target.id === `card-input-trash-${ev.target.dataset.index}`) {
+      confirmationDialog(
+        ev,
+        deleteList,
+        "Eita, você está deletando uma lista inteirinha!",
+        "Ao confirmar, toda a lista e seus itens serão deletados permanentemente do sistema. Deseja continuar mesmo assim?"
+      );
     }
   });
 
