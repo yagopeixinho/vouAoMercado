@@ -132,6 +132,7 @@
   }
   .login-form-container {
     align-items: flex-start;
+    height: 0px;
   }
 
   #input-login-username::placeholder {
