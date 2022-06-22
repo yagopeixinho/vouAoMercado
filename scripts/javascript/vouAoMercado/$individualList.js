@@ -95,6 +95,7 @@ function getProducts() {
   document.getElementById("product-lists").addEventListener("click", (ev) => {
     switch (ev.target.dataset.infoType) {
       case "edit":
+        createNewItemModal(ev);
         break;
 
       case "delete":

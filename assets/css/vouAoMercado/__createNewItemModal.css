@@ -52,3 +52,8 @@
 .amount-itens-container {
   width: 200px;
 }
+
+#product-amount-minus,
+#product-amount-plus {
+  cursor: pointer;
+}
