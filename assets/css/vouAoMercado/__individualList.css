@@ -4,6 +4,10 @@
   margin-bottom: 26px;
 }
 
+.new-product-btn {
+  cursor: pointer;
+}
+
 .products-container-body {
   display: flex;
   flex-direction: column;
@@ -28,10 +32,6 @@
   height: 100%;
   border-radius: 142px 142px 0 0;
   background-color: var(--main-bg-color-light);
-}
-
-.container-icon-new-item img {
-  cursor: pointer;
 }
 
 .lists-content {
@@ -128,7 +128,6 @@
   display: flex;
   align-items: flex-end;
   gap: 4px;
-  cursor: pointer;
 }
 
 .individual-list-tools {
