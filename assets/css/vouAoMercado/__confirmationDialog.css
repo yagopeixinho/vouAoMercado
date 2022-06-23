@@ -14,3 +14,36 @@
   flex: 1;
   display: flex;
 }
+
+@media (min-width: 1201px) {
+}
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .modal-container {
+    height: unset !important;
+  }
+
+  .main-font-h3 {
+    font-size: 22px;
+    line-height: 30px;
+  }
+
+  .btn-main-color-1 {
+    width: 130px;
+    height: 60px;
+  }
+
+  .btn-main-color-3 {
+    width: 130px;
+    height: 60px;
+  }
+}
