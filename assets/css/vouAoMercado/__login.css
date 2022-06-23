@@ -83,29 +83,81 @@
 
 /* Extra large screens, TV */
 @media (min-width: 1201px) {
-  body {
-    background-color: blueviolet;
-  }
 }
 
 /* Laptops, large screens */
 @media (min-width: 1025px) and (max-width: 1200px) {
-  body {
-    background-color: yellow;
-  }
 }
 
 /* Small screens, laptops */
 @media (min-width: 769px) and (max-width: 1024px) {
-  body {
-    background-color: green;
+  .login-title {
+    margin: 120px 40px 30px 40px;
+    justify-content: center;
+  }
+  .login-title img {
+    width: 50px;
+  }
+  .login-left-side {
+    flex: 0.5;
+  }
+
+  .login-form-container {
+    align-items: flex-start;
+    height: 0px;
+  }
+
+  #input-login-username::placeholder {
+    font-size: 20px;
+  }
+
+  .main-font-h1 {
+    font-size: 27px;
+    line-height: 26px;
+  }
+
+  .login-right-side-header {
+    justify-content: center;
   }
 }
 
 /* Tablets, iPads... */
 @media (min-width: 481px) and (max-width: 768px) {
-  body {
-    background-color: blue;
+  .login-container {
+    flex-direction: column-reverse;
+  }
+
+  .login-title {
+    gap: none;
+    margin: 40px 40px 30px 40px;
+    justify-content: center;
+  }
+  .login-title img {
+    width: 50px;
+  }
+  .login-left-side {
+    flex: 0.5;
+  }
+  .login-form {
+    width: 68%;
+    height: 180px;
+  }
+  .login-form-container {
+    align-items: flex-start;
+    height: 0px;
+  }
+
+  #input-login-username::placeholder {
+    font-size: 20px;
+  }
+
+  .main-font-h1 {
+    font-size: 27px;
+    line-height: 26px;
+  }
+
+  .login-right-side-header {
+    justify-content: center;
   }
 }
 
@@ -148,6 +200,3 @@
     justify-content: center;
   }
 }
-
-/* 
-1201px and more —  Extra large screens, TV */
