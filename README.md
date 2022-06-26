@@ -63,20 +63,7 @@ Esse projeto nasceu como uma necessidade pessoal de modo em que sempre que eu vo
 
 ## Como rodar o projeto?
 
-### Pré-requisitos
 
-Antes de começar, você vai precisar ter instalado em sua máquina o git . Além disto é bom ter um editor para trabalhar com o código como Visual Studio Code.
-
-### Clonando o repositório
-
-```bash
-# Clone este repositório
-$ git clone git@bitbucket.org:seno-ti/exporevestir-frontend.git
-```
-
-### Executar o servidor
-
-Executar o servidor ou use um plugin que criar um servidor.
 
 ## Contato
 
