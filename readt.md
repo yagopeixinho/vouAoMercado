@@ -39,7 +39,7 @@ Além de conseguir personalizar as cores do sistema e listas, você pode também
 
 ### Personalize da forma que você quiser!
 
-<img src="assets/media/images/readme/feature-personalisacao.png">
+<img src="assets/media/images/readme/feature-personalisacao.jpg">
 
 <br>
 
