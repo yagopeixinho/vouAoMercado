@@ -111,6 +111,6 @@ Sinta-se a vontade para enviar quantas *pull-request* você desejar e eu a anali
 - Se você tem alguma dúvida ou quer entrar em contato por qualquer outro motivo, você pode encontrar mais informações sobre mim [clicando aqui](https://github.com/yagopeixinho/yagopeixinho/blob/master/README.md)
    
 ## Licença
-Esse projeto é licenciado sobre o MIT License. [Clique aqui para ver mais detalhes](https://github.com/yagopeixinho/vouAoMercado/blob/master/LICENSE) para mais detalhes.
+Esse projeto é licenciado sobre o MIT License. [Clique aqui para ver mais detalhes](https://github.com/yagopeixinho/vouAoMercado/blob/master/LICENSE)
 
 
